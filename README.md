@@ -19,7 +19,9 @@ To run this project on your machine, you must have node.js installed. You may do
 Copy to terminal: git clone https://github.com/JvJev/Vinted_web_engineering_task.git
 
 2. Create a file named .env in root directory, copy line of code bellow and add your Flickr API key: 
+ 
   REACT_APP_API_KEY=copy_your_api_key_here
+
 Here is a link if you need to check how to do it: https://medium.com/@wineshuga/keeping-api-keys-private-in-your-react-project-bbdf9d16119e
 
 3. Install packages
@@ -37,7 +39,10 @@ http://localhost:3000/favorite-photos
 6.2. To launch ESLINT open new terminal and type npm run lint
 
 Technologies:
+
 React
+
 CSS
+
 Flickr API
 
