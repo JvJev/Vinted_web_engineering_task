@@ -1,0 +1,196 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+.mainPage, .favorite-photos {
+  padding: 20px;
+  padding-top: 70px; 
+  background-color: #f0f0f0;
+}
+
+header {
+  background-color: #007782;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  padding: 25px;
+}
+
+nav a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #fe8686;
+}
+
+.image-grid {
+  display: grid;
+  gap: 50px;
+  padding: 25px;
+  transition: all 0.5s ease;
+}
+
+.image-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, height 0.5s ease;
+  aspect-ratio: 1 / 1;
+}
+
+.image-card:hover {
+  transform: scale(1.03);
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.card-body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-card:hover .card-body {
+  opacity: 1;
+}
+
+.card-title {
+  color: #fff;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 10px;
+  padding: 0 10px;
+}
+
+.favorite-button {
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.favorite-button:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.loading {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* Responsive design */
+/* Desktop */
+@media screen and (min-width: 1024px) {
+  .image-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .image-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 767px) {
+  .image-grid {
+    grid-template-columns: 1fr;
+    gap: 5px;
+
+  }
+  
+  .card-title {
+    font-size: 1rem;
+  }
+  
+  .card-author {
+    font-size: 0.9rem;
+  }
+  
+  .favorite-button {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+}
+
+.favorite-photos h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+@keyframes layout-change {
+  0% { opacity: 0.5; transform: scale(0.95); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.image-grid {
+  animation: layout-change 1.5s ease-out;
+}
+
+.card-author {
+  color: rgb(228, 228, 228);
+  font-size: 1.1rem;
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 0 10px;
+}
+
+.card-divider {
+  width: 50%;
+  border: none;
+  border-top: 1px solid #fff;
+  margin: 10px auto;
+}
+
+.image-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
